@@ -26,9 +26,9 @@ export default function ChatPage() {
     } else if (provider === 'TTS') {
       result = await createTtsLog(prompt)
       if (result.success && result.audioBlob) {
-        new Audio(URL.createObjectURL(result.audioBlob)).play()
+        showToast('Imagen de IA generada con éxito', 'success')
       } else {
-        showToast('Error al generar el audio', 'error')
+        showToast('Error al generar la imagen', 'error')
       }
     }
 

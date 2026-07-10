@@ -37,7 +37,7 @@ export default function LogList({ logs, loading, error, onRefresh, onEdit, onDel
           </div>
           <div style={{ textAlign: 'center' }}>
             <h3 style={{ fontSize: 18, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 6 }}>¿En qué puedo ayudarte hoy?</h3>
-            <p style={{ fontSize: 14 }}>Selecciona Texto o Audio en la parte inferior y envía tu mensaje.</p>
+            <p style={{ fontSize: 14 }}>Selecciona Texto o Imagen en la parte inferior y envía tu mensaje.</p>
           </div>
         </div>
       )}

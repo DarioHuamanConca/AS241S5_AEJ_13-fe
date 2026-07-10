@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Send, Loader2, MessageSquarePlus, Zap, Volume2 } from 'lucide-react'
+import { Send, Loader2, MessageSquarePlus, Zap, Image } from 'lucide-react'
 
 export default function ChatInput({ onSubmit, loading }) {
   const [prompt, setPrompt] = useState('')
@@ -65,23 +65,23 @@ export default function ChatInput({ onSubmit, loading }) {
               transition: 'all 0.2s'
             }}
           >
-            <Volume2 size={13} />
-            Audio (TTS)
+            <Image size={13} />
+            Imagen (IA)
           </button>
         </div>
       </div>
-
+ 
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         <textarea
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
-          placeholder={provider === 'LLAMA' ? "Escribe tu pregunta para Llama..." : "Escribe el texto que quieres convertir a voz..."}
+          placeholder={provider === 'LLAMA' ? "Escribe tu pregunta para Llama..." : "Escribe el texto de la imagen que quieres generar..."}
           disabled={loading}
           rows={3}
           onKeyDown={(e) => {
             if (e.key === 'Enter' && !e.shiftKey) {
               e.preventDefault()
-              handleSubmit(e)
+               handleSubmit(e)
             }
           }}
           style={{
@@ -125,7 +125,7 @@ export default function ChatInput({ onSubmit, loading }) {
             ) : (
               <Send size={14} />
             )}
-            {loading ? 'Procesando...' : (provider === 'LLAMA' ? 'Enviar' : 'Generar Audio')}
+            {loading ? 'Procesando...' : (provider === 'LLAMA' ? 'Enviar' : 'Generar Imagen')}
           </button>
         </div>
       </form>
